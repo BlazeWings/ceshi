@@ -1,6 +1,6 @@
 from flask import Flask, request, render_template_string
 from jinja2 import Environment, escape
-import itsdangerous
+from itsdangerous import json
 
 
 app = Flask(__name__)

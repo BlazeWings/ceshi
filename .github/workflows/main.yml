@@ -21,3 +21,10 @@ jobs:
     - name: Run tests
       run: python app.py
 
+      
+- name: Start Flask server
+run: |
+export FLASK_APP=app.py
+flask run --host=0.0.0.0
+
+

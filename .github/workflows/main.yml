@@ -1,15 +1,14 @@
-name: Python Flask Server
 
-on:
-push:
-branches:
-- main
+name: Python application
+
+on: [push]
 
 jobs:
-build-and-deploy:
-runs-on: ubuntu-latest
+  build:
 
- steps:
+    runs-on: ubuntu-latest
+
+    steps:
     - uses: actions/checkout@v2
     - name: Set up Python 3.8
       uses: actions/setup-python@v2
@@ -21,22 +20,4 @@ runs-on: ubuntu-latest
         pip install -r requirements.txt
     - name: Run tests
       run: python app.py
-
-
-- name: Install dependencies
-run: |
-python -m pip install --upgrade pip
-pip install -r requirements.txt
-
-- name: Start Flask server
-run: |
-export FLASK_APP=app.py
-flask run --host=0.0.0.0
-
-
-
-- name: Start Flask server
-run: |
-export FLASK_APP=app.py
-flask run --host=0.0.0.0
 

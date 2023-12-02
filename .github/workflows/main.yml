@@ -20,7 +20,6 @@ jobs:
     - name: Run tests
       run: python app.py
 
-      
 - name: Start Flask server
 run: |
 export FLASK_APP=app.py
